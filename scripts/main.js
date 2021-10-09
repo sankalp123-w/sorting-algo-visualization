@@ -12,7 +12,7 @@ var divs=[];
 let sp =[];
 var margin_size;
 var cont=document.getElementById("array_container");
-let disp = document.getElementById('array_disp');
+
 cont.style="flex-direction:row";
 
 //Array generation and updation.
@@ -23,16 +23,16 @@ inp_as.addEventListener("input",update_array_size);
 function generate_array()
 {
     cont.innerHTML="";
-    disp.innerHTML='';
+   
     for(var i=0;i<array_size;i++)
     {
         div_sizes[i]=Math.floor(Math.random() * 0.5*(inp_as.max - inp_as.min) ) +40;
         divs[i]=document.createElement("div");
         sp[i]=document.createElement("small");
-        sp[i].innerHTML=div_sizes[i]+",";
+        sp[i].innerHTML=" "+div_sizes[i]+" ";
         sp[i].style.marginLeft="2px"
-        disp.appendChild(sp[i]);
         
+        divs[i].appendChild(sp[i]);
         cont.appendChild(divs[i]);
         margin_size=0.1;
         divs[i].style=" margin:0% " + margin_size + "%; background-color:pink; width:" + (100/array_size-(2*margin_size)) + "%; height:" + (div_sizes[i]) + "%;";
